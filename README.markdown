@@ -10,5 +10,5 @@ Be happy!
 
 As usual, fork-commit-pullrequest and explain why your commit should enter here.
 
-Any commit that weren't discussed previously will be deleted without warning.
+Any commit that wasn't discussed previously will be deleted without warning.
 
