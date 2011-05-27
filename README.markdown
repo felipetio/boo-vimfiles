@@ -1,11 +1,12 @@
-= Vimfiles
+# Vimfiles
 
-== Usage
+## Usage
+
 git clone git://github.com/boo-box/vimfiles ~/.vim
 
 Be happy!
 
-== Incrementing repository
+## Incrementing repository
 
 As usual, fork-commit-pullrequest and explain why your commit should enter here.
 
