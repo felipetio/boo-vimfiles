@@ -2,7 +2,7 @@
 
 ## Usage
 
-git clone git://github.com/boo-box/vimfiles ~/.vim
+git clone git://github.com/boo-box/boo-vimfiles ~/.vim
 
 Be happy!
 
