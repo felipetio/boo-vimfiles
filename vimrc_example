@@ -1,5 +1,11 @@
 " Place this file into your $HOME directory and edit at your will
 
+" load pathogen runtime paths before global
+" It's important!
+if exists("g:loaded_pathogen")
+  call pathogen#runtime_append_all_bundles()
+endif
+
 " This should be included to enable some common setups
 source ~/.vim/vimrc_global
 
@@ -35,7 +41,9 @@ set number "show line numbers
 "set nowrap      "dont wrap lines
 set linebreak   "wrap lines at convenient points
 
-set formatoptions-=o "dont continue comments when pushing o/O
+"dont continue comments when pushing o/O.
+"Some ftplugin override this setting. use :verbose set fo to see
+set formatoptions-=o
 
 "only status line setup open to details
 source ~/.vim/status_line_setup.vim
