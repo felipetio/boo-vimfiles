@@ -1,0 +1,85 @@
+" Place this file into your $HOME directory and edit at your will
+
+" This should be included to enable some common setups
+source ~/.vim/vimrc_global
+
+" I prefer dark backgrounds
+set background=dark
+
+"display tabs and trailing spaces
+set list
+set listchars=tab:»-,extends:>,precedes:<,trail:·
+
+"indent settings
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+set foldcolumn=1        "columns to show point of folding
+
+set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore+=*.o,*.obj,*~ "stuff to ignore when tab completing
+
+"vertical/horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+set number "show line numbers
+
+"set nowrap      "dont wrap lines
+set linebreak   "wrap lines at convenient points
+
+set formatoptions-=o "dont continue comments when pushing o/O
+
+"only status line setup open to details
+source ~/.vim/status_line_setup.vim
+
+" set default colorscheme
+" Use :SCROLLCOLOR to see all colors
+" colorscheme desert256
+
+function ClearTrailingSpaces() range
+  let number_of_trailing_spaces = search('\s\+$', 'nw')
+  let has_trailing_spaces = number_of_trailing_spaces != 0
+  if has_trailing_spaces
+    if a:firstline == a:lastline
+      let rang = '%'
+    else
+      let rang = a:firstline .','. a:lastline
+    endif
+    let save_cursor = getpos(".")
+    execute rang . 's/\s\+$//g'
+    echo "lines cleared"
+    call setpos('.', save_cursor)
+  else
+    echo "no trailing spaces found"
+  endif
+endfunction
+
+command -range ClearTrailingSpaces <line1>,<line2>call ClearTrailingSpaces()
+
+function! ChangeFileencoding()
+  " Add more encodings here
+  let encodings = ['latin1', 'utf8']
+  let prompt_encs = []
+  let index = 0
+  while index < len(encodings)
+    call add(prompt_encs, index.'. '.encodings[index])
+    let index = index + 1
+  endwhile
+  let choice = inputlist(prompt_encs)
+  if choice >= 0 && choice < len(encodings)
+    execute 'e ++enc='.encodings[choice].' %:p'
+  endif
+endf
+nmap <F8> :call ChangeFileencoding()<CR>
+
+"##############################################################################
+"### M A P P I N G S
+"##############################################################################
