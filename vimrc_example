@@ -2,9 +2,9 @@
 
 " load pathogen runtime paths before global
 " It's important!
-if exists("g:loaded_pathogen")
-  call pathogen#runtime_append_all_bundles()
-endif
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 
 " This should be included to enable some common setups
 source ~/.vim/vimrc_global
