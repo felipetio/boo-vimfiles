@@ -125,9 +125,3 @@ inoremap <C-U> <C-G>u<C-U>
 " This turn off an annoying warning on xterms with less than 88 colors and if
 " vim wasn't compiled with gui support
 let g:CSApprox_verbose_level = 0
-
-" Loading indentation styles to diferent filetypes
-" All commented by default. Open vimrc_indentation_styles and change it!
-if filereadable("$HOME/.vimrc_indentation_style")
-  source $HOME/.vimrc_indentation_style
-end
