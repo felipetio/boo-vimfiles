@@ -1,3 +1,14 @@
+" load pathogen runtime paths before global
+" It's important!
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+" set correctly ack plugin executable
+if executable('ack-grep')
+  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+end
+
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
@@ -117,6 +128,6 @@ let g:CSApprox_verbose_level = 0
 
 " Loading indentation styles to diferent filetypes
 " All commented by default. Open vimrc_indentation_styles and change it!
-if filereadable(glob("~/.vimrc_indentation_style"))
-  source ~/.vimrc_indentation_style
+if filereadable("$HOME/.vimrc_indentation_style")
+  source $HOME/.vimrc_indentation_style
 end

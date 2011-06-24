@@ -1,13 +1,7 @@
 " Place this file into your $HOME directory and edit at your will
 
-" load pathogen runtime paths before global
-" It's important!
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
 " This should be included to enable some common setups
-source ~/.vim/vimrc_global
+source $HOME/.vim/vimrc_global
 
 " I prefer dark backgrounds
 set background=dark
