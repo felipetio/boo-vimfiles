@@ -45,10 +45,6 @@ set linebreak   "wrap lines at convenient points
 "Some ftplugin override this setting. use :verbose set fo to see
 set formatoptions-=o
 
-""" temporary files on one place (stolen from sryche/vimfiles on github)
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
 "only status line setup open to details
 source ~/.vim/status_line_setup.vim
 
