@@ -50,7 +50,7 @@ source ~/.vim/status_line_setup.vim
 
 " set default colorscheme
 " Use :SCROLLCOLOR to see all colors
-" colorscheme desert256
+colorscheme solarized
 
 source $HOME/.vim/handy_functions.vim
 
