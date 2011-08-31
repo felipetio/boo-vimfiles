@@ -28,3 +28,6 @@
 [submodule "bundle/xptemplate"]
 	path = bundle/xptemplate
 	url = git://github.com/drmingdrmer/xptemplate.git
+[submodule "personal"]
+	path = personal
+	url = ./personal/.git/
