@@ -33,7 +33,9 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 set statusline+=%=      "left/right separator
 set statusline+=%#label#
-set statusline+=%{fugitive#statusline()}
+"if exists("*fugitive#statusline")
+  set statusline+=%{fugitive#statusline()}
+"endif
 set statusline+=%*
 set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 set statusline+=%c,     "cursor column
